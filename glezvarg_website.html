@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Glezvarg Dist - Soluciones en PRFV de alta resistencia para ambientes industriales y marinos. Rejillas, tapas, perfiles y sistemas modulares en Cancún, México.">
+    <meta name="keywords" content="PRFV, rejillas industriales, FRP, fibra de vidrio, Cancún, México, industrial, marino">
+    <title>Glezvarg Dist | Soluciones PRFV - Rejillas y Perfiles Industriales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #f39c12;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: var(--white);
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--dark) 100%);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%232c3e50" width="1200" height="600"/><g fill="%23f39c12" opacity="0.1"><circle cx="100" cy="100" r="50"/><circle cx="300" cy="200" r="70"/><circle cx="500" cy="150" r="60"/><circle cx="800" cy="250" r="80"/><circle cx="1000" cy="180" r="65"/></g></svg>');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.4);
+        }
+        
+        .cta-button:hover {
+            background: #e67e22;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.6);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .benefits {
+            background: var(--light);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .benefit-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .benefit-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .benefit-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .product-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary) 0%, #e67e22 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+        }
+        
+        .product-content {
+            padding: 1.5rem;
+        }
+        
+        .product-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        
+        .product-card ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+        
+        .product-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--light);
+        }
+        
+        .product-card li:before {
+            content: "✓ ";
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .stats {
+            background: var(--secondary);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-section {
+            background: linear-gradient(135deg, var(--dark) 0%, var(--secondary) 100%);
+            color: var(--white);
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-info {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-item i {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+        
+        .cotizacion-form {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .cotizacion-form h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.9);
+            color: var(--dark);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .submit-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        
+        .submit-button:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/5299902009171?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20productos%20PRFV" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">GLEZVARG DIST</div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <h1>Soluciones en PRFV de Alta Resistencia</h1>
+        <p>Para ambientes industriales y marinos en todo México</p>
+        <a href="#contacto" class="cta-button">Solicitar Cotización</a>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <h2 class="section-title">¿Por qué elegir PRFV?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Alta Durabilidad</h3>
+                    <p>Resistente a corrosión, químicos y ambientes marinos. No se oxida ni deteriora como el metal.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Mantenimiento Mínimo</h3>
+                    <p>Olvídese del mantenimiento constante. Colores integrados en el material para mayor durabilidad.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-weight-hanging"></i>
+                    <h3>Ligero y Resistente</h3>
+                    <p>70% más ligero que el acero con excelente capacidad de carga. Fácil instalación y manipulación.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>No Conductivo</h3>
+                    <p>Seguridad eléctrica garantizada. Ideal para zonas con riesgo eléctrico y ambientes industriales.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <h3>Anti-Deslizante</h3>
+                    <p>Superficie texturizada que garantiza seguridad en zonas húmedas y de alto tráfico.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Económico a Largo Plazo</h3>
+                    <p>Inversión inteligente. Sin costos de mantenimiento, pintura o reemplazo frecuente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="container" id="productos">
+        <h2 class="section-title">Nuestros Productos</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-th"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Rejillas Moldeadas</h3>
+                    <ul>
+                        <li>Cuadros de 1.5" × 1.5"</li>
+                        <li>Sin redondos de unión (una sola pieza)</li>
+                        <li>Peralte: 1", 1.5" o 2"</li>
+                        <li>Mayor resistencia estructural</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-grip-horizontal"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Rejillas Irving</h3>
+                    <ul>
+                        <li>Con rieles y redondos de unión</li>
+                        <li>Cuadros estándar</li>
+                        <li>Peralte: 1", 1.5" o 2"</li>
+                        <li>Versatilidad de aplicación</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-border-all"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Rejillas Mini-Cuadro</h3>
+                    <ul>
+                        <li>Cuadros de 5/8" × 5/8"</li>
+                        <li>Peralte de 1.5"</li>
+                        <li>Alta densidad de soporte</li>
+                        <li>Ideal para tráfico ligero</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-swimming-pool"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Rejillas para Alberca</h3>
+                    <ul>
+                        <li>Peralte de solo 1"</li>
+                        <li>Riel cerrado</li>
+                        <li>Redondos de unión</li>
+                        <li>Resistente al cloro</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-square"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Tapas para Registro</h3>
+                    <ul>
+                        <li>60×40 cm tráfico peatonal</li>
+                        <li>Diversas medidas disponibles</li>
+                        <li>Certificación ISO</li>
+                        <li>Marco incluido</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-ladder"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Escaleras Marinas</h3>
+                    <ul>
+                        <li>A medida o para armarse</li>
+                        <li>Resistente al agua salada</li>
+                        <li>Peldaños anti-deslizantes</li>
+                        <li>Fácil instalación</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-shapes"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Perfiles Estructurales</h3>
+                    <ul>
+                        <li>Tubulares cuadrados y redondos</li>
+                        <li>Viga "I" y Canal "U"</li>
+                        <li>Unicanal con abrazaderas</li>
+                        <li>Diversas medidas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Clips Tipo "M"</h3>
+                    <ul>
+                        <li>Acero inoxidable 316L</li>
+                        <li>Para rejillas moldeadas y pultruidas</li>
+                        <li>Fácil instalación</li>
+                        <li>Máxima sujeción</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <i class="fas fa-braille"></i>
+                </div>
+                <div class="product-content">
+                    <h3>Sistemas Modulares</h3>
+                    <ul>
+                        <li>Barandales FRP</li>
+                        <li>Pasarelas y plataformas</li>
+                        <li>Diseño personalizado</li>
+                        <li>Instalación modular</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estadísticas -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Años de Experiencia</p>
+                </div>
+                <div class="stat-item">
+                    <h3>500+</h3>
+                    <p>Proyectos Realizados</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Satisfacción del Cliente</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Asesoría por WhatsApp</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sectores de Aplicación -->
+    <section class="container">
+        <h2 class="section-title">Sectores que Atendemos</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <i class="fas fa-industry"></i>
+                <h3>Industrial</h3>
+                <p>Plantas de manufactura, cuartos de máquinas, zonas de producción</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-hotel"></i>
+                <h3>Hotelería</h3>
+                <p>Áreas de servicio, cuartos de máquinas, zonas de piscinas</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-water"></i>
+                <h3>Tratamiento de Agua</h3>
+                <p>PTAR, plantas potabilizadoras, sistemas de filtración</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-anchor"></i>
+                <h3>Marina y Muelles</h3>
+                <p>Embarcaderos, marinas, instalaciones portuarias</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-bolt"></i>
+                <h3>CFE e Infraestructura</h3>
+                <p>Subestaciones eléctricas, instalaciones de energía</p>
+            </div>
+            <div class="benefit-card">
+                <i class="fas fa-hard-hat"></i>
+                <h3>Construcción</h3>
+                <p>Obras nuevas, remodelaciones, mantenimiento</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto y Cotización -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--white);">Solicite su Cotización</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Ubicación</strong>
+                            <p>Cancún, Quintana Roo, México</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <div>
+                            <strong>WhatsApp Business</strong>
+                            <p>+52 990 200 9171</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>Horario</strong>
+                            <p>Lunes a Viernes: 8:30 AM - 4:30 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-truck"></i>
+                        <div>
+                            <strong>Cobertura</strong>
+                            <p>Distribuimos a todo México</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-shipping-fast"></i>
+                        <div>
+                            <strong>Tiempo de Entrega</strong>
+                            <p>5-8 días fabricación + 3-5 días envío</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cotizacion-form">
+                    <h3>¿Qué necesita para cotizar?</h3>
+                    <form id="cotizacionForm">
+                        <div class="form-group">
+                            <label>Su Nombre:</label>
+                            <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo de Producto:</label>
+                            <input type="text" id="producto" required placeholder="Ej: Rejillas moldeadas">
+                        </div>
+                        <div class="form-group">
+                            <label>Medidas y Cantidad:</label>
+                            <input type="text" id="medidas" required placeholder="Ej: 1m x 2m, 10 piezas">
+                        </div>
+                        <div class="form-group">
+                            <label>Tipo de Uso / Carga a Soportar:</label>
+                            <input type="text" id="uso" required placeholder="Ej: Tráfico peatonal, 300 kg/m²">
+                        </div>
+                        <div class="form-group">
+                            <label>Descripción de la Aplicación:</label>
+                            <textarea id="descripcion" required placeholder="Describa dónde se instalará y para qué propósito..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-button">
+                            <i class="fab fa-whatsapp"></i> Enviar por WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Glezvarg Dist. Todos los derechos reservados.</p>
+        <p>Soluciones en PRFV de alta calidad | Certificación ISO</p>
+    </footer>
+
+    <script>
+        document.getElementById('cotizacionForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('nombre').value;
+            const producto = document.getElementById('producto').value;
+            const medidas = document.getElementById('medidas').value;
+            const uso = document.getElementById('uso').value;
+            const descripcion = document.getElementById('descripcion').value;
+            
+            const mensaje = `Hola, me interesa una cotización:%0A%0A` +
+                          `*Nombre:* ${nombre}%0A` +
+                          `*Producto:* ${producto}%0A` +
+                          `*Medidas/Cantidad:* ${medidas}%0A` +
+                          `*Tipo de uso:* ${uso}%0A` +
+                          `*Descripción:* ${descripcion}%0A%0A` +
+                          `*Nota:* Enviaré fotos/videos de la instalación actual por WhatsApp`;
+            
+            window.open(`https://wa.me/5299902009171?text=${mensaje}`, '_blank');
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-card, .product-card, .stat-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
